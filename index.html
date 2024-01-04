@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presupuesto APP</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Íconos -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS propio -->
+    <script src="assets/js/index.js"></script>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Inicio HEADER -->
+    <header class="container">
+      <h1>PRESUPUESTO APP</h1>
+    </header>
+    <!-- Fin HEADER -->
+
+    <main class="container">
+      <!-- SECCION PRESUPUESTO -->
+      <section class="row my-4">
+        <!-- INICIO FORM PRESUPUESTO -->
+        <div id="boxPresupuesto" class="col p-2">
+          <form id="formPresupuesto">
+            <div class="form-group">
+              <label for="inputPresupuesto">Ingresa Tu Presupuesto</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputPresupuesto"
+                pattern="[0-9]+"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-outline-success">
+              Calcular
+            </button>
+          </form>
+        </div>
+        <!-- FIN BOX PRESUPUESTO -->
+
+        <!-- INICIO SALDO -->
+        <div class="col mx-3">
+          <div class="row">
+            <div class="col">
+              <p>PRESUPUESTO</p>
+              <b class="d-inline">$</b>
+              <b id="txtPresupuesto" class="d-inline">0</b>
+            </div>
+            <div class="col">
+              <p>GASTOS</p>
+              <b class="d-inline">$</b>
+              <b id="txtGastos" class="d-inline">0</b>
+            </div>
+            <div class="col">
+              <div>
+                <p>SALDO</p>
+                <b class="d-inline">$</b>
+                <b id="txtSaldo" class="d-inline">0</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIN SALDO -->
+      </section>
+
+      <!-- SECCION GASTOS -->
+      <section class="row my-4">
+        <!-- INICIO FORM GASTOS -->
+        <div id="boxGastos" class="col p-2">
+          <form id="formGastos">
+            <div class="form-group">
+              <label for="inputNombreGasto">Ingresa El Nombre Del Gasto</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputNombreGasto"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputCantidadGasto"
+                >Ingresa La Cantidad Del Gasto</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="inputCantidadGasto"
+                pattern="[0-9]+"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-outline-danger">
+              Añadir Gasto
+            </button>
+          </form>
+        </div>
+        <!-- FIN FORM GASTOS -->
+
+        <!-- INICIO TABLA GASTOS -->
+        <div class="col mx-3">
+          <table id="tablaGastos" class="table table-hover">
+            <thead>
+              <tr>
+                <th>GASTO</th>
+                <th>VALOR</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+          </table>
+        </div>
+        <!-- FIN TABLA GASTOS -->
+      </section>
+    </main>
+  </body>
+</html>
